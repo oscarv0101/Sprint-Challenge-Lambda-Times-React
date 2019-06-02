@@ -16,7 +16,11 @@ export default class Content extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
+    this.setState({
+      tabs: tabData,
+      cards: cardData
+    })
     // Once the component has mounted, get the data and reflect that data on the state.
   }
 
@@ -36,7 +40,12 @@ export default class Content extends Component {
         - if the selected tab is 'all' it should return all 
           of the items from cardData. 
         - else, it should only return those cards whose 'tab' matched this.state.selected.
+
+
     */
+  
+
+
     return this.state.cards;
   };
 
@@ -48,7 +57,7 @@ export default class Content extends Component {
           `selectedTab` that includes the currently selected tab
           and `selectTabHandler` that includes the function to change the selected tab
         */}
-        <Tabs tabs={this.state.tabs} />
+        <Tabs  tabs={this.state.tabs}  />
         <Cards cards={this.filterCards()} />
       </div>
     );
