@@ -19,5 +19,17 @@ const Tab = props => {
 };
 
 // Make sure you include PropTypes on your props.
+Tab.propTypes = {
+  tabData: PropTypes.arrayOf(
+    PropTypes.oneOf([
+      'all',
+      'javascript',
+      'technology',
+      'node',
+      'React.js',
+      'bootstrap'
+    ])
+  )
+}
 
 export default Tab;
